@@ -1,0 +1,111 @@
+.participants {
+
+    &__wrapper {
+        position: relative;
+    }
+
+    &__title {
+        @include set-margin-bottom(60px);
+        @include set-font-size(54px, 10.8px);
+        font-weight: 400;
+        text-transform: uppercase;
+
+        @include tablet-portable-down {
+            @include set-margin-bottom(40px);
+            @include set-font-size(36px, 3.6px);
+        }
+    }
+
+    &__list {
+        display: flex;
+        width: 1230px;
+        list-style: none;
+        overflow: hidden;
+
+        @include extra-tablet-landscape-down {
+            gap: 0;
+            margin: auto;
+            @include set-margin-bottom(40px);
+            width: 410px;
+        }
+
+        @include tablet-portable-down {
+            @include set-margin-bottom(25px);
+            width: 335px;
+        }
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        flex-shrink: 0;
+        padding: 0 45px;
+        text-align: center;
+
+        @include tablet-portable-down {
+            padding: 0 24px;
+            width: 100%;
+        }
+    }
+
+    &__img {
+        @include set-margin-bottom(28px);
+        
+        @include tablet-portable-down {
+            margin-left: auto;
+            margin-right: auto;
+            width: 244px;
+            height: auto;
+        }
+    }
+
+    &__name {
+        @include set-margin-bottom(6px); 
+        @include set-font-size(24px, 4.8px);
+        font-family: "Golos Text", sans-serif;
+        color: $color-font-base;
+        font-weight: 600;
+
+        @include tablet-portable-down {
+            @include set-margin-bottom(8px); 
+        }
+    }
+
+    &__role {
+        @include set-margin-bottom(20px); 
+        @include set-font-size(20px, 4px);
+        font-family: "Golos Text", sans-serif;
+        color: $color-font-base;
+        font-weight: 400;
+        opacity: .6;
+    }
+
+    &__button {
+        margin: auto;
+    }
+
+    &__controls {
+        position: absolute;
+        top: 11px;
+        right: 17px;
+        display: flex;
+        align-items: center;
+        gap: 16.5px;
+
+        @include extra-tablet-landscape-down {
+            position: static;
+            justify-content: center;
+        }
+    }
+
+    &__slider-indikator {
+        @include set-font-size(16px, 3.2px);
+        font-family: "Golos Text", sans-serif;
+        color: $color-font-base;
+        font-weight: 400;
+    }
+
+    &__total {
+        opacity: .6;
+    }
+}

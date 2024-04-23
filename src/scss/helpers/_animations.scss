@@ -1,0 +1,9 @@
+@keyframes up-down {
+    0% {
+        transform: translateY(-1000px);
+    }
+    
+      100% {
+        transform: translateY(0);
+    }
+}

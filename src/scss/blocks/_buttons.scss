@@ -1,0 +1,108 @@
+.general-cta {
+    display: block;
+    margin: 0;
+    padding: 18px 49px;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 66px;
+    border: 2px solid $color-black-base;
+    @include set-font-size(16px, 4.8px);
+    color: $color-font-base;
+    font-family: "Golos Text", sans-serif;
+    font-weight: 500;
+    text-align: center;
+    text-decoration: none;
+    transition: all ease-out .2s;
+
+    @include tablet-portable-down {
+        padding: 18px;
+    }
+
+    &:hover {
+        background: $color-black-base;
+        color: $color-white;
+    }
+
+    &--black {
+        background: $color-black-base;
+        color: $color-white;
+        border: 2px solid transparent;
+
+        @include tablet-portable-down {
+            border: none;
+        }
+
+        &:hover {
+            background: $color-yellow;
+            color: $color-font-base;
+        }
+    }
+
+    &--blur {
+        backdrop-filter: blur(30px);
+
+        @include tablet-portable-down {
+            background: $color-white;
+            border: none;
+            opacity: .9;
+        }
+    }
+}
+
+.arrow {
+    position: relative;
+    padding: 0;
+    width: 44px;
+    height: 44px;
+    background: $color-font-base;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all ease-out .2s;
+
+    &::before {
+        @include pseudo;
+        top: 13px;
+        left: 11px;
+        width: 17px;
+        height: 17px;
+        border-right: 2px solid $color-white;
+        border-bottom: 2px solid $color-white;
+        transform: rotate(-45deg);
+    }
+
+    &:hover {
+        background: $color-yellow;
+    }
+
+    &--disabled {
+        background: $color-grey-disabled;
+        pointer-events: none;
+    }
+
+    &--left {
+        &::before {
+            transform: rotate(135deg);
+            left: 16px;
+        }
+    }
+}
+
+.details {
+    padding: 8px;
+    width: 113px;
+    border: 1px solid $color-blue;
+    border-radius: 62px;
+    background: $color-white;
+    @include set-font-size(16px, 3.2px);
+    font-family: "Golos Text", sans-serif;
+    color: $color-blue;
+    font-weight: 500;
+    transition: all ease-out .2s;
+    cursor: pointer;
+
+    &:hover {
+        background: $color-blue;
+        color: $color-white;
+    }
+}

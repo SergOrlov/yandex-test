@@ -1,0 +1,72 @@
+*, :after, :before {
+    box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+}
+    
+.wrapper {
+    max-width: 1260px;
+    padding: 0 15px;
+    @include margin-auto;
+}
+  
+.general-wrapper {
+    overflow: hidden;
+}
+  
+.hide-1024 {
+    @include tablet-landscape-down {
+      display: none;
+    }
+}
+  
+.push {
+  @each $name, $size in $push-sizes {
+    &-size-#{$name}:not(:last-child) {
+      @each $screen, $value in $size {
+        @if $screen == 'desktop' {
+          margin-bottom: $value;
+        }
+
+        @include tablet-portable-down {
+          @if $screen == 'tablet' {
+            margin-bottom: $value;
+          }
+        }
+
+        @include mob-big-down {
+          @if $screen == 'mobile' {
+            margin-bottom: $value;
+          }
+        }
+      }
+    }
+  }
+}

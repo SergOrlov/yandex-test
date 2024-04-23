@@ -1,0 +1,241 @@
+.vasuki {
+    @include set-margin-bottom(200px);
+
+    @include tablet-portable-down {
+        @include set-margin-bottom(120px);
+    }
+
+    &__title {
+        max-width: 806px;
+        @include set-margin-bottom(54px);
+        @include set-font-size(54px, 10.8px);
+        font-weight: 400;
+        text-transform: uppercase;
+
+        @include tablet-landscape-down {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            @include set-margin-bottom(148px);
+            max-width: 100%;
+        }
+
+        @include tablet-portable-down {
+            @include set-font-size(36px, 3.6px);
+        }
+    }
+
+    &__subtitle {
+        display: inline-block;
+        padding-left: 10px;
+        max-width: 280px;
+        @include set-font-size(20px, 4px);
+        font-family: "Golos Text", sans-serif;
+        color: $color-blue;
+        font-weight: 400;
+        text-transform: none;
+
+        @include tablet-landscape-down {
+            padding-left: 0;
+            max-width: 100%;
+        }
+
+        @include tablet-portable-down {
+            @include set-font-size(18px, 3.6px);
+        }
+    }
+
+    &__list {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        max-width: 1222px;
+        list-style: none;
+        grid-template-areas: 
+            'point1-2 point1-2 point3'
+            'point4-5 point4-5 point3'
+            'point6 point7 point7';
+
+        @include tablet-landscape-down {
+            display: flex;
+            gap: 0;
+            margin-left: auto;
+            margin-right: auto;
+            @include set-margin-bottom(28px);
+            max-width: none;
+            width: 600px;
+            overflow-x: clip;
+        }
+
+        @include tablet-portable-down {
+            width: 335px;
+        }
+
+        &::after {
+            @include pseudo;
+            bottom: -2px;
+            right: -60px;
+            width: 400px;
+            height: 235px;
+            background: url('../img/plane_400x235_2x.png') no-repeat;
+            background-size: cover;
+
+            @include tablet-landscape-down {
+                top: -154px;
+                left: 12px;
+            }
+
+            @include tablet-portable-down {
+                width: 335px;
+                height: 182px;
+                top: -121px;
+            }
+        }
+    }
+
+     &__item {
+        display: flex;
+        gap: 20px;
+
+        @include tablet-landscape-down {
+            flex-direction: column;
+            flex-shrink: 0;
+            gap: 28px;
+            padding: 62px 20px 20px;
+            width: 100%;
+            min-height: 300px;
+            box-sizing: border-box;
+            background: url('../img/vas_bgr_dark_mob_670x600_2x.jpg') no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+        
+        &:first-child {
+            grid-area: point1-2;
+        }
+
+        &:nth-child(2) {
+            grid-area: point3;
+        }
+
+        &:nth-child(3) {
+            grid-area: point4-5;
+        }
+
+        &:nth-child(4) {
+            grid-area: point6;
+        }
+
+        &:nth-child(5) {
+            grid-area: point7;
+        }
+    }
+    
+    &__item-content {
+        display: flex;
+        gap: 16px;
+        padding: 20px 21px 20px;
+        max-width: 394px;
+        width: 100%;
+        background: url('../img/vas_bgr_light_desktop_394x244_2x.jpg') no-repeat;
+        background-position: center;
+        background-size: cover;
+
+        @include extra-tablet-landscape-down {
+            padding: 20px 16px;
+        }
+
+        @include tablet-landscape-down {
+            padding: 0;
+            width: 100%;
+            max-width: 100%;
+            background: none;
+        }
+
+        &--wide {
+            padding-right: 320px;
+            max-width: 100%;
+            
+            @include extra-tablet-landscape-down {
+                padding-left: 16px;
+                padding-right: 320px;
+            }
+
+            @include tablet-landscape-down {
+                padding-right: inherit;
+            }
+        }
+
+        &--dark-bgr {
+            background: url('../img/vas_bgr_dark_desktop_808x136_2x.jpg') no-repeat;
+            background-position: center;
+            background-size: cover;
+
+            @include tablet-landscape-down {
+                background: none;
+            }
+        }
+    }
+
+    &__item-deascription {
+        @include set-font-size(20px, 4px);
+        color: $color-font-base;
+        font-family: "Golos Text", sans-serif;
+        font-weight: 500;
+
+        @include tablet-portable-down {
+            @include set-font-size(18px, 3.6px);
+        }
+    }
+
+    &__item-number {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        width: 36px;
+        height: 36px;
+        background: $color-white;
+        border-radius: 50%;
+        @include set-font-size(20px, 4px);
+        color: $color-font-base;
+        font-family: "Golos Text", sans-serif;
+        font-weight: 600;
+    }
+
+    &__controls {
+        display: none;
+
+        @include tablet-landscape-down {
+            display: flex;
+            gap: 16px;
+        }
+    }
+
+    &__arrow-left {
+        margin-left: auto;
+    }
+
+    &__arrow-right {
+        margin-right: auto;
+    }
+
+    &__slide-indikators-list {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        list-style: none;
+    }
+    
+    &__slide-indikators-item {
+        width: 10px;
+        height: 10px;
+        background: $color-grey-disabled-2;
+        border-radius: 50%;
+
+        &--active {
+            background: $color-font-base;
+        }
+    }
+}

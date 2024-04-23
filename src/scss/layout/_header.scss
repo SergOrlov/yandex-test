@@ -1,0 +1,153 @@
+@import '../helpers/animations';
+
+.header {
+    position: relative;
+    padding-top: 26px;
+    padding-bottom: 86px;
+    min-height: 700px;
+    box-sizing: border-box;
+    background: $color-light-grey url('../img/header_bgr_1920x700_2x.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    @include tablet-landscape-down {
+        background-position: -370px
+    }
+
+    @include tablet-portable-down {
+        padding-top: 15px;
+        min-height: 774px;
+        background: $color-light-grey url('../img/header_bgr_mob_768x774_2x.jpg') no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    @include mob-big-down {
+        min-height: 830px;
+        background-position-x: -259px;
+    }
+
+    @include mob-mid-down {
+        min-height: 780px;
+        background-position-x: -316px;
+    }
+
+    &__logo-block {
+        @include set-margin-bottom(60px);
+
+        @include tablet-portable-down {
+            @include set-margin-bottom(40px);
+        }
+    }
+
+    &__logo {
+
+        @include tablet-portable-down {
+            width: 213px;
+            height: auto;
+        }
+    }
+
+    &__content {
+        max-width: 542px;
+
+        @include tablet-portable-down {
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 335px;
+        }
+    }
+
+    &__title {
+        @include set-margin-bottom(25px);
+        @include set-font-size(60px, 6px);
+        font-weight: 400;
+        text-transform: uppercase;
+
+        @include tablet-portable-down {
+            @include set-margin-bottom(24px);
+            margin-left: auto;
+            margin-right: auto;
+            @include set-font-size(36px, 3.6px);
+        }
+    }
+
+    &__subtitle {
+        @include set-margin-bottom(28px);
+        @include set-font-size(18px, 5.4px);
+        font-family: "Golos Text", sans-serif;
+        color: $color-font-base;
+        font-weight: 400;
+        text-align: center;
+
+        @include tablet-portable-down {
+            text-align: left;
+        }
+    }
+
+    &__title-span {
+        display: block;
+        text-align: left;
+
+        &--center {
+            text-align: center;
+        }
+
+        &--bottom {
+            padding-left: 34px;
+
+            @include tablet-portable-down {
+                padding-left: 25px;
+            }
+        }
+    }
+
+    &__cta-block {
+        display: flex;
+        gap: 16px;
+
+        @include tablet-portable-down {
+            flex-direction: column;
+            gap: 5px;
+        }
+    }
+
+    &__horse-img {
+        position: absolute;
+        bottom: 0;
+        left: calc(50% + 152px);
+        transform: translateY(-1000px);
+        animation: up-down cubic-bezier(1, 0, 1, 1) 1s forwards;
+        animation-delay: 1s;
+
+        @include tablet-landscape-down {
+            left: calc(50% + 275px);
+            width: 180px;
+            height: auto;
+        }
+
+        @include tablet-portable-down {
+            left: calc(50% + 73px);
+            width: 114px;
+        }
+
+        @include mob-big-down {
+            left: calc(50% + 2px);
+            width: 114px;
+        }
+
+        @include mob-mid-down {
+            left: calc(50% - 60px);
+            width: 114px;
+        }
+    }
+
+    &__pawn-img {
+        position: absolute;
+        bottom: 19.5px;
+        left: calc(50% + 560px);
+        transform: translateY(-1000px);
+        animation: up-down cubic-bezier(1, 0, 1, 1) 1s forwards;
+        animation-delay: 2s;
+    }
+}

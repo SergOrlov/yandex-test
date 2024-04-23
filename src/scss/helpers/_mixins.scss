@@ -1,0 +1,138 @@
+/* MEDIA QUERIES - s */
+
+// 1280px and less
+@mixin extra-tablet-landscape-down {
+  @media screen and (max-width: #{$width-tablet-extra-big}) {
+    @content;
+  }
+}
+
+// 1024px and less
+@mixin tablet-landscape-down {
+  @media screen and (max-width: #{$width-tablet-landscape}) {
+    @content;
+  }
+}
+
+// 1025px and more
+@mixin tablet-landscape-up {
+  @media screen and (min-width: #{$width-tablet-landscape + 1}) {
+    @content;
+  }
+}
+
+// 768px and less
+@mixin tablet-portable-down {
+  @media screen and (max-width: #{$width-tablet-portable}) {
+    @content;
+  }
+}
+
+// 769px and more
+@mixin tablet-portable-up {
+  @media screen and (min-width: #{$width-tablet-portable + 1}) {
+    @content;
+  }
+}
+
+// 480px and less
+@mixin mob-big-down {
+  @media screen and (max-width: #{$width-mob-big}) {
+    @content;
+  }
+}
+
+// 481px and more
+@mixin mob-big-up {
+  @media screen and (min-width: #{$width-mob-big + 1}) {
+    @content;
+  }
+}
+
+// 375px and less
+@mixin mob-mid-down {
+  @media screen and (max-width: #{$width-mob-mid}) {
+    @content;
+  }
+}
+
+// 320px and less
+@mixin mob-small-down {
+  @media screen and (max-width: #{$width-mob-small}) {
+    @content;
+  }
+}
+
+// 1023px and less
+@mixin tablet-landscape-down-less {
+  @media screen and (max-width: #{$width-tablet-landscape - 1px}) {
+    @content;
+  }
+}
+
+// 767px and less
+@mixin tablet-portable-down-less {
+  @media screen and (max-width: #{$width-tablet-portable - 1px}) {
+    @content;
+  }
+}
+
+// 374px and less
+@mixin mob-mid-less {
+  @media screen and (max-width: #{$width-mob-mid - 1px}) {
+    @content;
+  }
+}
+
+/* MEDIA QUERIES - e */
+
+@mixin pseudo {
+  content: '';
+  position: absolute;
+}
+
+@mixin margin-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin common-margin-b-80-56-40 {
+  @include set-margin-bottom(80px);
+
+  @include tablet-portable-down-less {
+    @include set-margin-bottom(56px);
+  }
+
+  @include mob-big-down {
+    @include set-margin-bottom(40px);
+  }
+}
+
+@mixin set-font-size($size, $step) {
+  font-size: $size;
+  line-height: $size + $step;
+}
+
+@mixin set-font-size-with-letter-spacing($size: 16px, $step: 8) {
+  font-size: $size;
+  line-height: $size + $step;
+  letter-spacing: calc($size / -100);
+}
+
+@mixin media-querie-down($resolution: 0px) {
+  @media screen and (max-width: #{$resolution}) {
+    @content;
+  }
+}
+
+@mixin media-querie-up($resolution: 0px) {
+  @media screen and (min-width: #{$resolution}) {
+    @content;
+  }
+}
+
+@mixin set-margin-bottom($margin-bottom) {
+  &:not(:last-child) {
+    margin-bottom: $margin-bottom;
+  }
+}

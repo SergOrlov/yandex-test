@@ -1,0 +1,7 @@
+.content {
+    padding: 80px 0 140px 0;
+
+    @include tablet-portable-down {
+        padding: 42px 0 100px 0;
+    }
+}

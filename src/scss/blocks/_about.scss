@@ -1,0 +1,78 @@
+.about {
+
+    @include set-margin-bottom(192px);
+
+    @include tablet-portable-down {
+        @include set-margin-bottom(120px);
+    }
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        gap: 25px;
+
+        @include tablet-landscape-down {
+            flex-direction: column;
+        }
+
+        @include tablet-portable-down {
+            gap: 60px;
+        }
+    }
+
+    &__img-block {
+        flex-shrink: 0;
+        margin-top: -20px;
+        width: 500px;
+
+        @include tablet-portable-down {
+            margin-top: 0;
+            max-width: 335px;
+        }
+    }
+
+    &__img {
+        width: 500px;
+        height: 550px;
+
+        @include tablet-portable-down {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    &__title {
+        @include set-margin-bottom(60px);
+        @include set-font-size(36px, 12.6px);
+        font-weight: 400;
+        text-transform: uppercase;
+
+        @include tablet-portable-down {
+            @include set-margin-bottom(44px);
+            @include set-font-size(28px, 9.8px);
+        }
+    }
+
+    &__title-part {
+        color: $color-red;
+        font-weight: 700;
+    }
+
+    &__table {
+        @include set-margin-bottom(48px);
+        
+        @include tablet-portable-down {
+            @include set-margin-bottom(40px);
+        }
+    }
+
+    &__note {
+        @include set-font-size(20px, 4px);
+        color: $color-blue;
+        font-family: "Golos Text", sans-serif;
+
+        @include tablet-portable-down {
+            @include set-font-size(18px, 3.6px);
+        }
+    }
+}

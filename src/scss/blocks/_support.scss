@@ -1,0 +1,82 @@
+.support {
+    @include set-margin-bottom(64px);
+
+    @include tablet-portable-down {
+        @include set-margin-bottom(40px);
+    }
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        min-height: 250px;
+        background: url('../img/play_chess_394x250_2x.png') no-repeat;
+        background-size: 394px 250px;
+        background-position: center right 15px;
+
+        @include tablet-landscape-down {
+            min-height: auto;
+            background: none;
+        }
+    }
+
+    &__title {
+        margin-right: 415px;
+        max-width: 764px;
+
+        @include tablet-landscape-down {
+            display: flex;
+            flex-direction: column;
+            margin-right: 0;
+            max-width: 100%;
+        }
+    }
+
+    &__title-part {
+        @include set-font-size(36px, 12.6px);
+        font-weight: 400;
+        text-transform: uppercase;
+
+        @include tablet-portable-down {
+            @include set-font-size(28px, 9.8px);
+        }
+
+        &:first-child {
+
+            @include tablet-landscape-down {
+                order: 1;
+                margin-bottom: 24px;
+            }
+        }
+
+        &:nth-child(2) {
+
+            @include tablet-landscape-down {
+                order: 3;
+            }
+        }
+
+        &--theme {
+            color: $color-red;
+            font-weight: 700;
+
+            @include tablet-landscape-down {
+                order: 4;
+            }
+        }
+    }
+
+    &__img {
+        display: none;
+
+        @include tablet-landscape-down {
+            display: flex;
+            order: 2;
+            margin-bottom: 24px;
+        }
+
+        @include tablet-portable-down {
+            width: 335px;
+            height: auto;
+        }
+    }
+}

@@ -1,0 +1,17 @@
+.participants 
+    .wrapper.participants__wrapper 
+        h2.participants__title Участники турнира
+        ul.participants__list
+            template#participants-item(style='display:none')
+                li.participants__item
+                    img.participants__img(src='../img/speaker_photo_320x320_2x.png' alt='Фото участника' width='320' height='320' loading='lazy')
+                    span.participants__name Хозе-Рауль Капабланка
+                    span.participants__role Чемпион мира по шахматам
+                    button.details.participants__button Подробнее
+        .participants__controls
+            button.arrow.arrow--left.participants__arrow-left.arrow--disabled
+            .participants__slider-indikator 
+                span.participants__current 3
+                |  / 
+                span.participants__total 6
+            button.arrow.arrow--right.participants__arrow-right

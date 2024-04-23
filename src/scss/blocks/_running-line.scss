@@ -1,0 +1,40 @@
+.running-line {
+    display: flex;
+    padding: 18px 12px;
+    background-color: $color-red;
+    overflow: hidden;
+
+    @include tablet-portable-down {
+        padding: 10px;
+    }
+
+    &__content {
+        display: flex;
+        gap: 30px;
+        padding-right: 30px;
+    }
+
+    &__guote {
+        position: relative;
+        font-family: "Merriweather", "Arial", sans-serif;
+        @include set-font-size(22px, 2.2px);
+        color: $color-white;
+        text-transform: uppercase;
+        white-space: nowrap;
+
+        @include tablet-portable-down {
+            @include set-font-size(16px, 1.6px);
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            right: -18px;
+            top: 8px;
+            width: 6px;
+            height: 6px;
+            background-color: $color-white;
+            border-radius: 50%;
+        }
+    }
+}
